@@ -1,2 +1,4 @@
-# ComputaçãoGrafica_Atividades
- aprendizado de computação gráfica
+Atividades para aprender computação gráfica
+aprendizado de computação gráfica
+ 
+ usado freeglut e OpenGL
