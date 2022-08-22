@@ -2,17 +2,20 @@
 #include <GL/glew.h>
 #include <GL/freeglut.h>
 
-void keyInput(unsigned char key, int x, int y){
-    switch(key) {
-        case 27:
-            exit(0);
-            break;
-        default:
-            break;
+void keyInput(unsigned char key, int x, int y)
+{
+    switch (key)
+    {
+    case 27:
+        exit(0);
+        break;
+    default:
+        break;
     }
 }
 
-void resize(int w, int h){
+void resize(int w, int h)
+{
     glViewport(0, 0, w, h);
 
     glMatrixMode(GL_PROJECTION);
@@ -23,11 +26,13 @@ void resize(int w, int h){
     glLoadIdentity();
 }
 
-void setup(void) {
+void setup(void)
+{
     glClearColor(1.0, 1.0, 1.0, 0.0);
 }
 
-void drawPolygon (void) {
+void drawPolygon(void)
+{
     glClear(GL_COLOR_BUFFER_BIT);
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glColor3f(0.0, 0.0, 0.0);
@@ -45,41 +50,36 @@ void drawPolygon (void) {
     glVertex3f(20.0, 80.0, 0.0);
     glVertex3f(20.0, 20.0, 0.0);
 
-
     glEnd();
-    
-    glColor3f(1.0, 0.0, 0.0);
 
-    
-    
-    
+    glColor3f(1.0, 0.0, 0.0);
 
     glEnd();
 
     glFlush();
 }
 
-int main (int argc, char** argv){
+int main(int argc, char **argv)
+{
 
-        glutInit(&argc, argv);
+    glutInit(&argc, argv);
 
-        glutInitContextVersion(4, 3);
-        glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
+    glutInitContextVersion(4, 3);
+    glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
 
-        glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA);
-        glutInitWindowPosition(100, 100);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA);
+    glutInitWindowPosition(100, 100);
 
-        glutCreateWindow("Hello World modificado");
+    glutCreateWindow("Um simples quadrado vazado");
 
-        glutDisplayFunc(drawPolygon);
-        glutReshapeFunc(resize);
-        glutKeyboardFunc(keyInput);
+    glutDisplayFunc(drawPolygon);
+    glutReshapeFunc(resize);
+    glutKeyboardFunc(keyInput);
 
-        //glewExperimental = GL_TRUE;
+    // glewExperimental = GL_TRUE;
 
-
-        setup();
-        glutMainLoop();
+    setup();
+    glutMainLoop();
 
     return 0;
 }
